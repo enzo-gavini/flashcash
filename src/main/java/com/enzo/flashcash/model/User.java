@@ -4,6 +4,8 @@ package com.enzo.flashcash.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Entity
 public class User {
