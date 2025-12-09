@@ -1,4 +1,4 @@
-package com.enzo.flashcash.service.form;
+package com.enzo.flashcash.service;
 
 
 import com.enzo.flashcash.repository.UserRepository;
