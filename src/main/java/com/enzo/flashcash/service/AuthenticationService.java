@@ -23,7 +23,7 @@ public class AuthenticationService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        Optional<User> user = userRepository
+        Optional<com.enzo.flashcash.model.User> user = userRepository
                 .findUserByEmail(s);
         if (user.isPresent()) {
             return  new org.springframework.security.core.userdetails.User(user.get().getEmail(), user.get().getPassword(),new ArrayList<>());

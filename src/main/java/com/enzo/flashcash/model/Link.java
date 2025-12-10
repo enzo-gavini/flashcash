@@ -1,14 +1,11 @@
 package com.enzo.flashcash.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jdk.jfr.Enabled;
+import jakarta.persistence.*;
+
 import lombok.Data;
 
 @Data
-@Enabled
+@Entity
 public class Link {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
