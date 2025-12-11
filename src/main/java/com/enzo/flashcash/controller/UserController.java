@@ -7,9 +7,7 @@ import com.enzo.flashcash.service.SessionService;
 import com.enzo.flashcash.service.UserService;
 import com.enzo.flashcash.service.form.SignUpForm;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -36,9 +34,8 @@ public class UserController {
     }
 
     @PostMapping("/signup")
-    public ModelAndView processRequest(@ModelAttribute("signUpForm") SignUpForm form) {
+    public ModelAndView registration(@ModelAttribute("signUpForm") SignUpForm form) {
         userService.registration(form);
         return new ModelAndView("signin");
     }
 }
-
