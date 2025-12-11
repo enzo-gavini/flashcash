@@ -24,7 +24,7 @@ public class UserController {
     @GetMapping("/")
     public ModelAndView home(Model model) {
         User user = sessionService.sessionUser();
-        return new ModelAndView("home", "user", user);
+        return new ModelAndView("index", "user", user);
     }
 
     //send signup template with instance of signUp form

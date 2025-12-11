@@ -19,6 +19,19 @@
                         <img class="logo" src="" th:src="@{/images/logo-flashcash-chauve.png}" alt=""/>
                     </div>
                     <h4 class="card-title text-center mb-5 fw-light fs-5"></h4>
+                    <form th:action="@{/signin}" method="post" class="form-signin">
+                        <div class="form-floating mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="E-mail" required autofocus>
+                        </div>
+                        <hr>
+                        <div class="form-floating mb-3">
+                            <input type="password" name="password" class="form-control" placeholder="Password" required >
+                        </div>
+                        <div class="d-grid mb-2">
+                            <button type="submit">
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
