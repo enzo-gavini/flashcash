@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Register form</title>
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <title>Sign In - FlashCash</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/custom.css}" rel="stylesheet">
 </head>
 
 <body class="sign">
@@ -16,20 +17,45 @@
                 </div>
                 <div class="card-body p-4 p-sm-5">
                     <div class="logo-card">
-                        <img class="logo" src="" th:src="@{/images/logo-flashcash-chauve.png}" alt=""/>
+                        <img class="logo" src="" th:src="@{/images/logo-flashcash-chauve.png}" alt="FlashCash Logo"/>
                     </div>
-                    <h4 class="card-title text-center mb-5 fw-light fs-5"></h4>
+                    <h4 class="card-title text-center mb-4 fw-light fs-5">Welcome Back to FlashCash</h4>
+                    <p class="text-center text-muted mb-4">Sign in to manage your transfers and connections</p>
+
+                    <!-- Error message display -->
+                    <div th:if="${param.error}" class="alert alert-danger" role="alert">
+                        Invalid email or password. Please try again.
+                    </div>
+
+                    <!-- Success message display -->
+                    <div th:if="${param.logout}" class="alert alert-success" role="alert">
+                        You have been successfully logged out.
+                    </div>
+
                     <form th:action="@{/signin}" method="post" class="form-signin">
                         <div class="form-floating mb-3">
-                            <input type="email" name="email" class="form-control" placeholder="E-mail" required autofocus>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Email address" required autofocus>
+                            <label for="email">Email address</label>
                         </div>
-                        <hr>
+
                         <div class="form-floating mb-3">
-                            <input type="password" name="password" class="form-control" placeholder="Password" required >
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                            <label for="password">Password</label>
                         </div>
-                        <div class="d-grid mb-2">
-                            <button type="submit">
+
+                        <div class="d-grid mb-3">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                Sign In
                             </button>
+                        </div>
+
+                        <hr>
+
+                        <div class="text-center">
+                            <p class="text-muted mb-0">
+                                Don't have an account?
+                                <a th:href="@{/signup}" class="link-primary">Sign up now</a>
+                            </p>
                         </div>
                     </form>
                 </div>
@@ -37,5 +63,7 @@
         </div>
     </div>
 </div>
+
+<script th:src="@{/js/validation.js}"></script>
 </body>
 </html>
